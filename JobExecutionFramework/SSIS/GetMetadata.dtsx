@@ -1,0 +1,181 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/30/2014 3:15:44 PM"
+  DTS:CreationName="SSIS.Package.7"
+  DTS:CreatorComputerName="NBHB240"
+  DTS:CreatorName="Christoph Seck"
+  DTS:DTSID="{E05F1D5F-ECB7-4448-9644-90CED3DB61B7}"
+  DTS:ExecutableType="SSIS.Package.7"
+  DTS:LastModifiedProductVersion="11.0.6020.0"
+  DTS:LocaleID="1031"
+  DTS:ObjectName="GetMetadata"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="128"
+  DTS:VersionGUID="{AF4D05DB-89B4-4593-A8CD-5003AE327688}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{AD37506C-C2FF-4E3E-B2E6-C631A5CA354B}"
+      DTS:ObjectName="TargetEntity">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Parameter_Leaf</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{7EE8580D-89AE-48EA-8AC0-3E1C2A226EA6}"
+      DTS:ObjectName="TargetEntityPackageParameter">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{86130C86-B5B2-4525-9831-31D2FCA4AF3C}"
+      DTS:ObjectName="TargetEntityProjectParameter">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{1C912C6F-A974-4B4E-A870-D30917AFD500}"
+      DTS:ObjectName="TargetSchema">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">etljob</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{037FB3D8-487B-432A-BF53-B81E18A01F58}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DataType">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{507D7977-DEEB-4E1F-860A-3B2CF9EAFB3E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DataTypes">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9386F096-3BAD-4224-B88E-9F44D900A74A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;[&quot;  + @[$Package::TargetSchema]  + &quot;].[&quot; + @[$Package::TargetEntity] + &quot;]&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DestinationTableMDMStaging">
+      <DTS:VariableValue
+        DTS:DataType="8">[etljob].[Parameter_Leaf]</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{62806C85-37AD-460B-909A-872F5DB74F06}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;[&quot;  + @[$Package::TargetSchema]  + &quot;].[&quot; + @[$Package::TargetEntityPackageParameter] + &quot;]&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DestinationTableMDMStagingPackageParameter">
+      <DTS:VariableValue
+        DTS:DataType="8">[etljob].[]</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E4DB636F-693D-4597-94C3-9705F59F9541}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;[&quot;  + @[$Package::TargetSchema]  + &quot;].[&quot; + @[$Package::TargetEntityProjectParameter] + &quot;]&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DestinationTableMDMStagingProjectParameter">
+      <DTS:VariableValue
+        DTS:DataType="8">[etljob].[]</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B3994263-0F5C-45D1-BC83-154528F6104E}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR, 50) @[System::ServerExecutionID]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MDMBatchTag">
+      <DTS:VariableValue
+        DTS:DataType="8">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{26DD8E71-7AC5-4B3D-B1A9-705A1C1E37F4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MDMVersion">
+      <DTS:VariableValue
+        DTS:DataType="8">Version_1</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\GetMetaData"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="GetMetaData"
+      DTS:DTSID="{5AB5ECEB-E9DB-44A9-8472-3BA7C63D52D2}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GetMetaData"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+          SQLTask:SqlStatementSource="exec etljob.prc_GetSSISDBFolders;&#xA;exec etljob.prc_GetSSISDBProjects;&#xA;exec etljob.prc_GetSSISDBPackages;&#xA;exec etljob.prc_GetSSISDBParameter&#xA;exec etljob.prc_SetStandardJobStep&#xA;exec [etljob].[prc_GetSSISDBDefaultParameterValues];&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Dieser CDATA-Abschnitt enthält die Layoutinformationen des Pakets, z.B. Informationen wie X-/Y-Koordinaten, Breite und Höhe.-->
+<!--Wenn Sie diesen Abschnitt manuell ändern und Ihnen ein Fehler unterläuft, können Sie ihn löschen. -->
+<!--Das Paket kann zwar weiterhin normal geladen werden, aber frühere Layoutinformationen gehen verloren, und die Elemente auf der Entwurfsoberfläche werden vom Designer automatisch neu angeordnet.-->
+<Objects
+  Version="sql11">
+  <!--Jeder darunter liegende Knoten enthält Eigenschaften, die sich nicht auf das Laufzeitverhalten auswirken.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="140.8,41.6"
+          Id="Package\GetMetaData"
+          TopLeft="132.000002247947,81.9764717379243" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

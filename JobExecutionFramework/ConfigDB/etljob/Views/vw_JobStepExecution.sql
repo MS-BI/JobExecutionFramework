@@ -1,0 +1,26 @@
+﻿
+
+
+CREATE VIEW [etljob].[vw_JobStepExecution]
+AS
+SELECT [JobStepExecutionID]
+	,[JobStepID]
+	,[JobExecutionID]
+	,[GroupID]
+	,[PackageID]
+	,[ClientID]
+	,[LayerID]
+	,[MetaGroupID]
+	,[ETLStatusID]
+	,[JobID]
+    ,[ApplicationID]
+	,[JobStepClusterID]
+	,[StepNo]
+	,[StartTime]
+	,[EndTime]
+	,[SSISExecutionID]
+    ,[ETLStatusSource]
+    ,[Message]
+	,[IsNotCritical]
+	,[AuditID]
+FROM [etljob].[JobStepExecution]

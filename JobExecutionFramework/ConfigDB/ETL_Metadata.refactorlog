@@ -1,0 +1,1144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="b47267e8-752a-46a6-98c1-0f676d5d8af4" ChangeDateTime="06/12/2014 11:18:54">
+    <Property Name="ElementName" Value="[config].[JobStep]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[config]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[JobStep]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="edb8cad8-87b2-4c35-82e8-d6a10c04b9d7" ChangeDateTime="06/12/2014 11:19:26">
+    <Property Name="ElementName" Value="[config].[JobStep].[JobStepID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[config].[JobStep]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[JobStepID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2b28a44e-a3d9-4bb2-ba68-1c9662728866" ChangeDateTime="06/12/2014 11:42:08">
+    <Property Name="ElementName" Value="[config].[JobStepConstrain]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[config]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[JobStepConstrain]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a68723fa-cf83-461e-a64a-b1816a82fa72" ChangeDateTime="06/12/2014 11:42:49">
+    <Property Name="ElementName" Value="[config].[JobStepConstrain].[JobStepConstrainID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[config].[JobStepConstrain]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[JobStepConstrainID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1d0fa7ed-8be6-46c3-8993-25b295714fd3" ChangeDateTime="06/12/2014 11:43:30">
+    <Property Name="ElementName" Value="[config].[JobStepConstrain].[JobStepID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[config].[JobStepConstrain]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[JobStepID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bdbf3ad1-77c7-4a0c-9e28-2e5e48419d09" ChangeDateTime="06/12/2014 11:44:25">
+    <Property Name="ElementName" Value="[config].[JobStepConstrain].[Constrain_JobStepID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[config].[JobStepConstrain]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[Constrain_JobStepID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9974a401-ac20-4571-b12f-2e5f00ddbd0e" ChangeDateTime="06/12/2014 12:40:19">
+    <Property Name="ElementName" Value="[dbo].[Table1].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ClientID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="16ca87a4-97c0-443d-9fe7-e588602d16a8" ChangeDateTime="06/12/2014 12:45:32">
+    <Property Name="ElementName" Value="[dbo].[JobStepException].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[JobStepException]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JobStepExceptionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="62abe0a9-bc89-4ee6-be87-5ca6027f2108" ChangeDateTime="06/12/2014 12:45:58">
+    <Property Name="ElementName" Value="[dbo].[JobStepException].[JobStepExceptionId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[JobStepException]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JobStepExceptionID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6e0a1e21-01f7-4185-b32a-65580fe5503b" ChangeDateTime="06/12/2014 12:52:09">
+    <Property Name="ElementName" Value="[config].[JobStep].[Enable]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[config].[JobStep]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[IsEnabled]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="de36805f-bc8c-49dc-bec6-0dc7a074f8cc" ChangeDateTime="06/12/2014 20:31:41">
+    <Property Name="ElementName" Value="[config].[JobGroup].[JobGroupName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[config].[JobGroup]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JobGroup" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f05c3ff8-4339-4a58-b817-0d5610ba1698" ChangeDateTime="06/12/2014 20:33:03">
+    <Property Name="ElementName" Value="[dbo].[Table1].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ApplicationID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="352fd18c-4d6e-4644-8f9d-8b8c36dae4d9" ChangeDateTime="06/12/2014 20:34:51">
+    <Property Name="ElementName" Value="[dbo].[Table2].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table2]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LayerID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="88725456-eb20-4d7f-972a-f6a08bf60be8" ChangeDateTime="06/12/2014 20:40:10">
+    <Property Name="ElementName" Value="[dbo].[Table1].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExclusionID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3e2d92a8-4396-429a-b21e-4291fd98b77c" ChangeDateTime="06/12/2014 20:44:44">
+    <Property Name="ElementName" Value="[config].[Group].[GroupID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[config].[Group]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SubGroupID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b15d682c-ae5a-438d-a269-cf93dd4dbba3" ChangeDateTime="06/12/2014 20:44:50">
+    <Property Name="ElementName" Value="[config].[Group].[Group]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[config].[Group]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SubGroup" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3349fb34-79ff-4c76-bc0a-1ddb2e594e35" ChangeDateTime="06/16/2014 07:11:37">
+    <Property Name="ElementName" Value="[config].[JobStep].[Step]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[config].[JobStep]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JobStep" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f7598ca7-dcc2-4d47-9e3a-43e613cd79fc" ChangeDateTime="06/16/2014 07:22:23">
+    <Property Name="ElementName" Value="[config].[MetaGroup].[SubGroupID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[config].[MetaGroup]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MetaGroupID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a69fa763-bde1-46ce-ab69-59e309666975" ChangeDateTime="06/16/2014 07:22:32">
+    <Property Name="ElementName" Value="[config].[MetaGroup].[SubGroup]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[config].[MetaGroup]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MetaGroup" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5d1e5683-9f22-4d4b-bb50-080772f277a0" ChangeDateTime="06/16/2014 07:27:22">
+    <Property Name="ElementName" Value="[dbo].[Execution].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Execution]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ExecutionID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="337c5aed-aab7-4b40-8b3e-4ce20d400bb1" ChangeDateTime="06/16/2014 07:33:19">
+    <Property Name="ElementName" Value="[dbo].[Execution].[JobGroupID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Execution]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="GroupID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="aa329ffc-17cf-4c79-a02b-7e06e51ed62c" ChangeDateTime="06/16/2014 08:07:29">
+    <Property Name="ElementName" Value="[dbo].[Execution]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[dbo]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[JobStepExecution]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="79f8c429-6e1c-48c2-9e32-990de2c0ec38" ChangeDateTime="06/16/2014 08:07:52">
+    <Property Name="ElementName" Value="[dbo].[JobStepExecution].[ExecutionID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[JobStepExecution]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[JobStepExecutionID]" />
+  </Operation>
+  <Operation Name="Move Schema" Key="8e6a27e8-c300-4c20-bbc2-0e6f1805f5c5" ChangeDateTime="06/25/2014 15:58:31">
+    <Property Name="ElementName" Value="[dbo].[fn_BlockedJobSteps]" />
+    <Property Name="ElementType" Value="SqlInlineTableValuedFunction" />
+    <Property Name="NewSchema" Value="config" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="453eeca3-8eab-43cd-9f5a-8d9b703a4062" ChangeDateTime="06/25/2014 15:59:14">
+    <Property Name="ElementName" Value="[dbo].[pc_LoadPackagesSSISDB]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="NewSchema" Value="config" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="1ee5ea16-d533-4739-bfc2-ae45ca6f84f0" ChangeDateTime="06/25/2014 16:25:05">
+    <Property Name="ElementName" Value="[config].[fn_BlockedJobSteps]" />
+    <Property Name="ElementType" Value="SqlInlineTableValuedFunction" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="7ca7f018-4ab5-44aa-8674-8aedd78672cd" ChangeDateTime="06/25/2014 16:26:24">
+    <Property Name="ElementName" Value="[config].[pc_ExecutePackage]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="57e3445d-6a8b-4b0a-ac23-abc05ea71b25" ChangeDateTime="06/25/2014 16:26:52">
+    <Property Name="ElementName" Value="[config].[pc_GetNextPackage]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="b9cf9f9c-1f03-48c5-9042-8b5d9c382ee6" ChangeDateTime="06/25/2014 16:27:17">
+    <Property Name="ElementName" Value="[config].[pc_InitJobExecution]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="89c0b7e8-89ed-4b3c-9740-a18021acbe3e" ChangeDateTime="06/25/2014 16:27:32">
+    <Property Name="ElementName" Value="[config].[pc_LoadPackagesSSISDB]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="3cab2129-edce-4a63-b61e-36860899d2d4" ChangeDateTime="06/25/2014 16:27:50">
+    <Property Name="ElementName" Value="[config].[pc_RunningPackages]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="c60e0845-2a14-45d8-b852-a5d8834e3d08" ChangeDateTime="06/25/2014 16:28:05">
+    <Property Name="ElementName" Value="[config].[pc_UpdateJobStepExecution]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="b2cd48f7-631f-4d35-b10a-4cc9e23b957b" ChangeDateTime="06/25/2014 16:28:26">
+    <Property Name="ElementName" Value="[config].[Application]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="60c4e423-72ea-4053-bd0e-40c6d162f8f2" ChangeDateTime="06/25/2014 16:28:47">
+    <Property Name="ElementName" Value="[config].[Client]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="0d7bbde9-469b-4d7b-b515-3e98f0e95310" ChangeDateTime="06/25/2014 16:29:05">
+    <Property Name="ElementName" Value="[config].[Exclusion]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="92b70929-8886-4c5d-82c2-90066a659869" ChangeDateTime="06/25/2014 16:29:24">
+    <Property Name="ElementName" Value="[config].[Group]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="d0732f4e-30ca-4261-bb08-db83befc0519" ChangeDateTime="06/25/2014 16:29:58">
+    <Property Name="ElementName" Value="[config].[Job]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="d8a78775-16e4-4ff0-b731-0fdf8feb2b43" ChangeDateTime="06/25/2014 16:30:13">
+    <Property Name="ElementName" Value="[config].[JobExecution]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="d013950c-a100-4a16-b7a0-8cef876496f8" ChangeDateTime="06/25/2014 16:30:33">
+    <Property Name="ElementName" Value="[config].[JobStep]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="7d9a6925-b513-4b9a-8340-1a203252963e" ChangeDateTime="06/25/2014 16:30:49">
+    <Property Name="ElementName" Value="[config].[JobStepConstrain]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="5ae31364-e4c6-4c25-b8c8-357be45d5524" ChangeDateTime="06/25/2014 16:31:20">
+    <Property Name="ElementName" Value="[config].[JobStepException]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="1121fa7d-c84b-43fc-b9e1-05a84c372190" ChangeDateTime="06/25/2014 16:31:37">
+    <Property Name="ElementName" Value="[config].[JobStepExecution]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="7c4c451d-4f16-4bf7-b5bf-d33a9d26c299" ChangeDateTime="06/25/2014 16:31:51">
+    <Property Name="ElementName" Value="[config].[Layer]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="44404290-645a-4544-bd2f-050b9b030d7b" ChangeDateTime="06/25/2014 16:32:07">
+    <Property Name="ElementName" Value="[config].[MetaGroup]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="41f910b3-23ba-4727-9597-68c3add7f11d" ChangeDateTime="06/25/2014 16:32:23">
+    <Property Name="ElementName" Value="[config].[Package]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="ccc5a8f2-94b5-44db-beb2-6f5ce43ac6e9" ChangeDateTime="06/25/2014 16:33:36">
+    <Property Name="ElementName" Value="[config].[vw_Application]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="38c0a77d-9ac0-4fca-882b-5a2d58f07339" ChangeDateTime="06/25/2014 16:33:49">
+    <Property Name="ElementName" Value="[config].[vw_Client]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="97e09ca0-4d37-49ae-9b3c-92af54d2df45" ChangeDateTime="06/25/2014 16:34:03">
+    <Property Name="ElementName" Value="[config].[vw_Exclusion]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="836ea6d9-7a2c-4fd6-b8cf-559715d29c83" ChangeDateTime="06/25/2014 16:34:21">
+    <Property Name="ElementName" Value="[config].[vw_Group]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="5937100c-c0af-4f08-a20d-a79cb8a286e3" ChangeDateTime="06/25/2014 16:34:47">
+    <Property Name="ElementName" Value="[config].[vw_Job]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="d8aedca8-4fda-4ea6-a14a-255009b6b197" ChangeDateTime="06/25/2014 16:35:03">
+    <Property Name="ElementName" Value="[config].[vw_JobExecution]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="81a06c4b-29a3-4049-aa27-0eef3e7ddc35" ChangeDateTime="06/25/2014 16:35:19">
+    <Property Name="ElementName" Value="[config].[vw_JobStep]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="714802c8-344d-4fa8-9502-6d4f5ba824da" ChangeDateTime="06/25/2014 16:35:38">
+    <Property Name="ElementName" Value="[config].[vw_JobStepConstrain]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="edeefd52-3cf3-4695-96b3-c6454b3c5774" ChangeDateTime="06/25/2014 16:35:52">
+    <Property Name="ElementName" Value="[config].[vw_JobStepException]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="bad4a6cf-8dd3-462a-9b0d-89bb0753514d" ChangeDateTime="06/25/2014 16:36:07">
+    <Property Name="ElementName" Value="[config].[vw_JobStepExecution]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="e1d320a8-8d06-494b-b8e2-bb34a9bdbd38" ChangeDateTime="06/25/2014 16:36:23">
+    <Property Name="ElementName" Value="[config].[vw_Layer]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="716af112-e73d-45fe-a688-d38e29956902" ChangeDateTime="06/25/2014 16:36:36">
+    <Property Name="ElementName" Value="[config].[vw_MetaGroup]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="263bc7c9-cc37-4b56-9f0b-4a477ab43263" ChangeDateTime="06/25/2014 16:36:50">
+    <Property Name="ElementName" Value="[config].[vw_Package]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="df46734e-1c1b-40a8-8c4c-9cad479dc01d" ChangeDateTime="06/25/2014 16:37:08">
+    <Property Name="ElementName" Value="[config].[vw_PackagesSSISDB]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="b8fe4a48-88da-478c-9fd5-e3bcee1043b0" ChangeDateTime="06/25/2014 16:37:39">
+    <Property Name="ElementName" Value="[config].[vw_SSISexecutions]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="01746ff8-3188-4a55-adec-7383b67f67e0" ChangeDateTime="06/25/2014 16:37:53">
+    <Property Name="ElementName" Value="[config].[vw_SSISFolders]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="a873acb2-ec44-4888-a139-de50f34a89bd" ChangeDateTime="06/25/2014 16:38:09">
+    <Property Name="ElementName" Value="[config].[vw_SSISProjects]" />
+    <Property Name="ElementType" Value="SqlView" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="023b6187-67fd-4e03-aae1-c3cc852374a5" ChangeDateTime="11/19/2014 13:49:28">
+    <Property Name="ElementName" Value="[etljob].[fn_BlockedJobSteps]" />
+    <Property Name="ElementType" Value="SqlInlineTableValuedFunction" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="eff077eb-01fc-4cc4-95a8-2f32467300f9" ChangeDateTime="11/19/2014 13:50:02">
+    <Property Name="ElementName" Value="[etljob].[fn_FailedJobSteps]" />
+    <Property Name="ElementType" Value="SqlInlineTableValuedFunction" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Move Schema" Key="3261419e-bbd4-4d9d-bf63-300fcb8ef31f" ChangeDateTime="11/19/2014 13:50:33">
+    <Property Name="ElementName" Value="[etljob].[fn_GetDependingJobSteps]" />
+    <Property Name="ElementType" Value="SqlMultiStatementTableValuedFunction" />
+    <Property Name="NewSchema" Value="etljob" />
+    <Property Name="IsNewSchemaExternal" Value="False" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b4d18c00-3f7a-4de7-97c8-5abe40dbb715" ChangeDateTime="11/19/2014 14:05:21">
+    <Property Name="ElementName" Value="[etljob].[pc_CheckJobFailure]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_CheckJobFailure]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a9510923-66a1-4a74-8443-17b85c9b1c75" ChangeDateTime="11/19/2014 14:05:48">
+    <Property Name="ElementName" Value="[etljob].[pc_EnableJobStep]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_EnableJobStep]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3def16a1-a7ba-4a77-965d-085432b82f1a" ChangeDateTime="11/19/2014 14:06:19">
+    <Property Name="ElementName" Value="[etljob].[pc_ExecutePackage]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_ExecutePackage]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1702dead-147a-47ad-9bfb-8aef70cc1aa6" ChangeDateTime="11/19/2014 14:06:39">
+    <Property Name="ElementName" Value="[etljob].[pc_FailedPackages]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_FailedPackages]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d0215831-7607-4ea8-8b66-36991c81ce76" ChangeDateTime="11/19/2014 14:06:56">
+    <Property Name="ElementName" Value="[etljob].[pc_GetDependingJobSteps]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_GetDependingJobSteps]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6a624401-eea1-4902-8a4f-02e67fac8795" ChangeDateTime="11/19/2014 14:07:16">
+    <Property Name="ElementName" Value="[etljob].[pc_GetJobStepCluster]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_GetJobStepCluster]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="10569adf-185f-4f76-86c6-eb74c3a38c8a" ChangeDateTime="11/19/2014 14:07:33">
+    <Property Name="ElementName" Value="[etljob].[pc_GetNextPackage]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_GetNextPackage]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="acde8602-b664-4a92-8a8e-73fff59a8d90" ChangeDateTime="11/19/2014 14:07:51">
+    <Property Name="ElementName" Value="[etljob].[pc_InitJobExecution]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_InitJobExecution]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f9381727-7283-4674-b5dd-60b90cb42b6a" ChangeDateTime="11/19/2014 14:08:10">
+    <Property Name="ElementName" Value="[etljob].[pc_LoadPackagesSSISDB]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_LoadPackagesSSISDB]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b8e39e5a-16cf-4205-a8e5-0754968f7a8e" ChangeDateTime="11/19/2014 14:08:22">
+    <Property Name="ElementName" Value="[etljob].[pc_LoadStandardJobStep]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_LoadStandardJobStep]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3a5e54d1-518c-4190-8160-68cee1867fb9" ChangeDateTime="11/19/2014 14:08:37">
+    <Property Name="ElementName" Value="[etljob].[pc_RunningPackages]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_RunningPackages]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fc83cccc-b346-4349-afc4-e33a63b9aa8f" ChangeDateTime="11/19/2014 14:08:50">
+    <Property Name="ElementName" Value="[etljob].[pc_UpdateJobExecution]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_UpdateJobExecution]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2f65836c-3c44-4549-b278-b3c3cca5b7fd" ChangeDateTime="11/19/2014 14:09:04">
+    <Property Name="ElementName" Value="[etljob].[pc_UpdateJobStepExecution]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[sp_UpdateJobStepExecution]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ea0328d7-5235-430d-bab1-ccf327cd8fe9" ChangeDateTime="12/12/2014 13:48:04">
+    <Property Name="ElementName" Value="[etljob].[JobStepCluster].[FailedBy]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[JobStepCluster]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FailedSSISExecutionID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f9d9a6d4-276a-4ef8-8c26-070e0b79bc34" ChangeDateTime="12/12/2014 15:21:16">
+    <Property Name="ElementName" Value="[etljob].[JobStepCluster].[FailedSSISExecutionID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[JobStepCluster]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FailedJobExecutionID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fe5250b4-b6df-4dc5-9831-b23459fc2d6c" ChangeDateTime="12/12/2014 17:19:36">
+    <Property Name="ElementName" Value="[dbo].[JobClusterConstrain].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[JobClusterConstrain]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JobClusterId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0358033a-df7d-4c1e-a7b7-94b8ac88bf9b" ChangeDateTime="12/12/2014 17:20:03">
+    <Property Name="ElementName" Value="[dbo].[JobStepClusterConstrain].[JobClusterId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[JobStepClusterConstrain]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JobStepClusterConstrainID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="961fc5f1-fbe8-4206-958e-e5211fb5e9a1" ChangeDateTime="02/09/2015 18:50:09">
+    <Property Name="ElementName" Value="[etljob].[Parameter].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Parameter]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParameterId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a3d01559-46fb-4bd8-b473-19ae4999cf53" ChangeDateTime="02/09/2015 18:56:04">
+    <Property Name="ElementName" Value="[etljob].[Parameter].[ParameterDataType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Parameter]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DataType" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="dfb62f2f-6517-40ec-a1a7-af90ed42c225" ChangeDateTime="02/09/2015 18:56:09">
+    <Property Name="ElementName" Value="[etljob].[Parameter].[ParameterDataTypeSSISDB]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Parameter]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DataTypeSSISDB" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="56cba2fa-20bc-4001-a055-1ee33ae220ef" ChangeDateTime="02/09/2015 18:56:13">
+    <Property Name="ElementName" Value="[etljob].[Parameter].[ParameterDescription]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Parameter]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Description" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2d7e2f42-c321-4816-800a-a62bedaea352" ChangeDateTime="02/09/2015 18:57:01">
+    <Property Name="ElementName" Value="[etljob].[Parameter].[Parameter]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Parameter]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParameterName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5375e27a-4d0d-4e20-998f-f915e9bd0fb4" ChangeDateTime="02/11/2015 09:53:13">
+    <Property Name="ElementName" Value="[dbo].[ParameterValueJobStep].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ParameterValueJobStep]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParameterValueJobStepId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="46d194d8-e800-41c2-80db-d8fed8b51875" ChangeDateTime="02/11/2015 09:53:39">
+    <Property Name="ElementName" Value="[dbo].[ParameterValueJobStep].[ParameterValueJobStepId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ParameterValueJobStep]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParameterValueJobStepID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f8d45f50-3d49-4095-a4d5-2c563561f377" ChangeDateTime="02/11/2015 10:10:42">
+    <Property Name="ElementName" Value="[dbo].[ParameterValueJobStep].[Active]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ParameterValueJobStep]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IsActive" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5aeb5b94-4f18-4756-af00-25ffc16093ca" ChangeDateTime="02/11/2015 10:13:52">
+    <Property Name="ElementName" Value="[dbo].[ParameterValueJobStep].[ParameterValueJobStepID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ParameterValueJobStep]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParameterValuePackageID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2bc22698-c87c-4cb0-a6fe-97396cd557f2" ChangeDateTime="02/11/2015 10:14:12">
+    <Property Name="ElementName" Value="[dbo].[ParameterValueJobStep].[JobStepID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ParameterValueJobStep]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PackageID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="35a96ddc-b7c7-4576-9f55-f6ca2444ba18" ChangeDateTime="02/11/2015 10:20:53">
+    <Property Name="ElementName" Value="[dbo].[ParameterValueProject].[ProjectID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ParameterValueProject]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProjectName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="902688ff-d736-42c1-88d8-9d0714266240" ChangeDateTime="02/11/2015 10:24:23">
+    <Property Name="ElementName" Value="[dbo].[System].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[System]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SystemID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="48c8fc8c-928a-4b0b-b196-274301657ef0" ChangeDateTime="02/12/2015 10:03:40">
+    <Property Name="ElementName" Value="[etljob].[ParameterValueLevel].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[ParameterValueLevel]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParameterValueLevelID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ae01e8b6-8e0f-478a-97d9-14578c0066f0" ChangeDateTime="02/23/2015 11:14:33">
+    <Property Name="ElementName" Value="[etljob].[Job].[JobID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Job]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FolderID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6bdd0998-afd7-496b-9abd-18e1eb0e2c96" ChangeDateTime="02/23/2015 11:14:57">
+    <Property Name="ElementName" Value="[etljob].[Job].[Job]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Job]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SSISFolder_ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0cb0d5fe-bc02-42d7-9ce1-a1224ab33f24" ChangeDateTime="02/23/2015 11:20:24">
+    <Property Name="ElementName" Value="[etljob].[Job].[FolderID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Job]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ProjectID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c91f4de2-515d-4121-af2e-cb923411bc59" ChangeDateTime="02/23/2015 11:20:37">
+    <Property Name="ElementName" Value="[etljob].[Job].[SSISFolder_ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Job]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SSISProject_ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a850c778-c601-4caf-9572-3fc3314dca05" ChangeDateTime="02/23/2015 11:20:46">
+    <Property Name="ElementName" Value="[etljob].[Job].[Foldername]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Job]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FolderID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0552abe1-476f-4672-b052-5c17375367d6" ChangeDateTime="02/23/2015 11:55:40">
+    <Property Name="ElementName" Value="[etljob].[System]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[TargetSystem]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d5fe933a-0c5e-4448-b02a-fbbc970e32fa" ChangeDateTime="02/23/2015 11:55:59">
+    <Property Name="ElementName" Value="[etljob].[TargetSystem].[SystemID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[TargetSystem]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[TargetSystemID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d5923547-7f49-4a28-8662-53c3e50d5db5" ChangeDateTime="02/23/2015 11:56:17">
+    <Property Name="ElementName" Value="[etljob].[TargetSystem].[System]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[TargetSystem]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[TargetSystem]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1f2751a4-625f-4d2e-9b32-d2a0b3fb5d15" ChangeDateTime="02/23/2015 11:56:35">
+    <Property Name="ElementName" Value="[etljob].[PK_System]" />
+    <Property Name="ElementType" Value="SqlPrimaryKeyConstraint" />
+    <Property Name="ParentElementName" Value="[etljob].[TargetSystem]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[PK_TargetSystem]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7fd982bf-0a2e-4436-b159-c41d795e0fab" ChangeDateTime="02/23/2015 14:06:17">
+    <Property Name="ElementName" Value="[etljob].[ParameterValueApplication].[ParameterValueApplicationID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[ParameterValueApplication]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParameterValueID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="65876ba4-4822-464e-90a9-4ef8b63d1391" ChangeDateTime="02/23/2015 14:09:55">
+    <Property Name="ElementName" Value="[etljob].[ParameterValue].[ApplicationID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[ParameterValue]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParameterObjectIdID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="45fe3c36-633c-43f6-b219-61f9817baf63" ChangeDateTime="02/23/2015 17:04:07">
+    <Property Name="ElementName" Value="[etljob].[Folder].[SSISFolder_ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Folder]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[SSISDBFolder_ID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="803c45b2-7aa1-43d0-b364-090d09810702" ChangeDateTime="02/23/2015 17:04:58">
+    <Property Name="ElementName" Value="[etljob].[Project].[SSISProject_ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Project]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[SSISDBProject_ID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f938f0b4-5e3f-4778-a3ab-d25331ee9480" ChangeDateTime="02/24/2015 09:24:33">
+    <Property Name="ElementName" Value="[etljob].[Package].[SSIS_Package_ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Package]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[SSISDBPackage_id]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e9a56c67-5602-40e1-82b6-87dca6542649" ChangeDateTime="02/24/2015 09:26:52">
+    <Property Name="ElementName" Value="[etljob].[Package].[SSISDB_Project_ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Package]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[SSISDBProject_id]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="17eeb6ed-2c69-4841-b797-975956863ba5" ChangeDateTime="05/18/2015 18:01:48">
+    <Property Name="ElementName" Value="[etljob].[Stop].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Stop]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="StopId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9b8d19c3-8857-42bd-808e-9c537bc9c43f" ChangeDateTime="05/18/2015 18:07:45">
+    <Property Name="ElementName" Value="[etljob].[Stop].[IsEnaBLED]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Stop]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="IsEnabled" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7937162b-77ae-47b2-b947-02be2e2f2a71" ChangeDateTime="05/27/2015 08:01:32">
+    <Property Name="ElementName" Value="[etljob].[JobExecution].[Blocked]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[JobExecution]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[IsBlocked]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5c951904-2e02-40f0-9091-2de471a6cb5e" ChangeDateTime="05/27/2015 09:34:39">
+    <Property Name="ElementName" Value="[etljob].[Recovery]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[RecoveryToDo]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="49b591bf-4acc-4600-b96f-a833b2dc1f70" ChangeDateTime="05/27/2015 09:34:55">
+    <Property Name="ElementName" Value="[etljob].[RecoveryToDo].[RecoveryId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[RecoveryToDo]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[RecoveryToDoId]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4bc3d116-5457-404b-a32a-69262b790abb" ChangeDateTime="05/27/2015 09:42:25">
+    <Property Name="ElementName" Value="[etljob].[RecoveryToDo]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[RecoveryItem]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a42502ba-7d7a-47cd-afe4-adf2c660fd9a" ChangeDateTime="05/27/2015 09:42:45">
+    <Property Name="ElementName" Value="[etljob].[RecoveryItem].[RecoveryToDoId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[RecoveryItem]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[RecoveryItemId]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c8b01eee-4e3f-4327-a36a-502ad6bd9332" ChangeDateTime="05/27/2015 16:39:16">
+    <Property Name="ElementName" Value="[etljob].[FK_RecoveryItem_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[etljob].[RecoveryItem]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_RecoveryItem_JobStepCluster]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9bcc1458-2393-4a14-b76f-23c07e6f4a8e" ChangeDateTime="06/02/2015 11:01:22">
+    <Property Name="ElementName" Value="[etljob].[Recovery].[ReecoveryId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Recovery]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RecoveryId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2930b6ef-cd64-453a-bb5d-1479517ce5c6" ChangeDateTime="09/02/2015 12:32:17">
+    <Property Name="ElementName" Value="[etljob].[ReservedParameter].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[ReservedParameter]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ReservedParameterId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e3fe9fb7-7094-4fdb-8387-911160030c96" ChangeDateTime="10/29/2015 11:23:12">
+    <Property Name="ElementName" Value="[etljob].[JobExecution].[EndStatus]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[JobExecution]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JobExecutionEndStatusID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="77f6e558-e3e8-457f-970d-023a36d86092" ChangeDateTime="10/29/2015 11:26:59">
+    <Property Name="ElementName" Value="[etljob].[Table1].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JobExecutionEndStatusId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d66e14f7-f240-4d06-8634-812c1a7235db" ChangeDateTime="10/29/2015 11:27:07">
+    <Property Name="ElementName" Value="[etljob].[Table1].[JobExecutionEndStatusId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[etljob].[Table1]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JobExecutionEndStatusID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bef76967-925f-4f97-b841-fefff66d2817" ChangeDateTime="05/09/2016 15:31:08">
+    <Property Name="ElementName" Value="[etljob].[sp_CheckExcludingClusters]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_CheckExcludingClusters]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bcacad47-9b13-4e82-958c-54de9e3cf7f6" ChangeDateTime="05/09/2016 15:31:42">
+    <Property Name="ElementName" Value="[etljob].[sp_CheckJobDependencies]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_CheckJobDependencies]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5bcf06af-bb94-4dee-91ae-a584f4cfa0f4" ChangeDateTime="05/09/2016 15:32:02">
+    <Property Name="ElementName" Value="[etljob].[sp_CheckJobFailure]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_CheckJobFailure]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7c14c072-7c80-4377-b24b-a2a50ed32ff7" ChangeDateTime="05/09/2016 15:32:27">
+    <Property Name="ElementName" Value="[etljob].[sp_CheckStops]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_CheckStops]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b1b5ec19-a13d-415e-8748-769f673e9424" ChangeDateTime="05/09/2016 15:32:46">
+    <Property Name="ElementName" Value="[etljob].[sp_CleanUpFolders]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_CleanUpFolders]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="06d2700f-ec66-4726-bed3-9311546e5267" ChangeDateTime="05/09/2016 15:33:08">
+    <Property Name="ElementName" Value="[etljob].[sp_CleanUpProjects]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_CleanUpProjects]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="28ac552d-75e2-4dd1-9705-8f01a4e794a4" ChangeDateTime="05/09/2016 15:33:29">
+    <Property Name="ElementName" Value="[etljob].[sp_EnableJobStep]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_EnableJobStep]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2cfafa2b-daf1-452c-a12a-f61f404f4fca" ChangeDateTime="05/09/2016 15:33:57">
+    <Property Name="ElementName" Value="[etljob].[sp_ExecutePackage]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_ExecutePackage]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="951cbf5a-61b3-41aa-af77-08bec99bc8c2" ChangeDateTime="05/09/2016 15:34:17">
+    <Property Name="ElementName" Value="[etljob].[sp_FailedPackages]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_FailedPackages]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d72c420f-f587-4159-a179-fb9cbf3ee8ef" ChangeDateTime="05/09/2016 15:34:31">
+    <Property Name="ElementName" Value="[etljob].[sp_FillRecoveryItem4Restart]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_FillRecoveryItem4Restart]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="da590be8-5b95-4354-9031-b1405caaac12" ChangeDateTime="05/09/2016 15:34:44">
+    <Property Name="ElementName" Value="[etljob].[sp_GetDependingJobSteps]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetDependingJobSteps]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="06912e81-d1da-4ef0-9605-a297ad440a78" ChangeDateTime="05/09/2016 15:35:10">
+    <Property Name="ElementName" Value="[etljob].[sp_GetJobStepCluster]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetJobStepCluster]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fd4de69f-2009-4d85-83e6-9d2cda335f70" ChangeDateTime="05/09/2016 15:35:33">
+    <Property Name="ElementName" Value="[etljob].[sp_GetMissedJobID]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetMissedJobID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="45085978-4858-4b6d-b37b-424c7132ff3c" ChangeDateTime="05/09/2016 15:35:50">
+    <Property Name="ElementName" Value="[etljob].[sp_GetNextPackage]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetNextPackage]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="36101a3e-202a-4e26-9805-5192d3701d91" ChangeDateTime="05/09/2016 15:36:03">
+    <Property Name="ElementName" Value="[etljob].[sp_GetNextRecoveryItem]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetNextRecoveryItem]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0a1f4643-b0c5-4197-94d4-c461b3803d30" ChangeDateTime="05/09/2016 15:36:14">
+    <Property Name="ElementName" Value="[etljob].[sp_GetRecoveryItemParameter]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetRecoveryItemParameter]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5a4f955d-d468-417d-b278-9f7a5e0cd9d4" ChangeDateTime="05/09/2016 15:36:27">
+    <Property Name="ElementName" Value="[etljob].[sp_GetReportExecutionOverview]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetReportExecutionOverview]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f4fefc8c-16d9-43cf-b198-9bd715b9d334" ChangeDateTime="05/09/2016 15:36:39">
+    <Property Name="ElementName" Value="[etljob].[sp_GetReportParaJobExecutionEndStatus]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetReportParaJobExecutionEndStatus]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="75c2f6fa-c2b9-4eea-bf66-f6f27e98032a" ChangeDateTime="05/09/2016 15:36:54">
+    <Property Name="ElementName" Value="[etljob].[sp_GetReportParaJobStepExecutionStatus]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetReportParaJobStepExecutionStatus]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3d43d4cd-13b6-4242-85cb-197032191526" ChangeDateTime="05/09/2016 15:37:08">
+    <Property Name="ElementName" Value="[etljob].[sp_GetSSISDBDefaultParameterValues]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetSSISDBDefaultParameterValues]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="cd9576ec-8d8d-4874-9b70-e0f830fb7bd4" ChangeDateTime="05/09/2016 15:37:21">
+    <Property Name="ElementName" Value="[etljob].[sp_GetSSISDBFolders]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetSSISDBFolders]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9f0a03b4-338e-484b-91cd-30a79a8de2d9" ChangeDateTime="05/09/2016 15:37:44">
+    <Property Name="ElementName" Value="[etljob].[sp_GetSSISDBPackages]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetSSISDBPackages]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="06edebe6-c6df-453f-abc8-783ed1b3b6f4" ChangeDateTime="05/09/2016 15:38:04">
+    <Property Name="ElementName" Value="[etljob].[sp_GetSSISDBParameter]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetSSISDBParameter]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a680f3ea-8e2c-48cc-b7d2-b71872b6cdc9" ChangeDateTime="05/09/2016 15:38:16">
+    <Property Name="ElementName" Value="[etljob].[sp_GetSSISDBProjects]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetSSISDBProjects]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e543b7b7-1680-4c3c-ba0f-21588b5816b3" ChangeDateTime="05/09/2016 15:38:28">
+    <Property Name="ElementName" Value="[etljob].[sp_GetStopedAgenbtJobs]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetStopedAgenbtJobs]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a8b28103-7775-4dac-85ef-2847402d2296" ChangeDateTime="05/09/2016 15:38:42">
+    <Property Name="ElementName" Value="[etljob].[sp_GetStopedAgentJobs]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetStopedAgentJobs]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="de8b7776-72e1-412f-8f17-ddfaf2d5ad4c" ChangeDateTime="05/09/2016 15:38:57">
+    <Property Name="ElementName" Value="[etljob].[sp_GetStopID]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetStopID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2d791e04-0680-422d-aa48-30ff5f0d303d" ChangeDateTime="05/09/2016 15:39:22">
+    <Property Name="ElementName" Value="[etljob].[sp_GetTargetSystemID]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetTargetSystemID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="48db1860-9077-4e7c-9837-ba48ddbbd8c6" ChangeDateTime="05/09/2016 15:39:55">
+    <Property Name="ElementName" Value="[etljob].[sp_InitJobExecution]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_InitJobExecution]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c8144444-cba5-4654-a233-a92d521ab62b" ChangeDateTime="05/09/2016 15:40:15">
+    <Property Name="ElementName" Value="[etljob].[sp_InitJobExecutionX]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_InitJobExecutionX]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="22e39d88-1dea-4d4b-a640-4ac790a34aac" ChangeDateTime="05/09/2016 15:41:23">
+    <Property Name="ElementName" Value="[etljob].[sp_InitPackage]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_InitPackage]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="caf67dd7-5724-48dc-8281-99dee5a4d26a" ChangeDateTime="05/09/2016 15:41:42">
+    <Property Name="ElementName" Value="[etljob].[sp_InitRecovery]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_InitRecovery]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a37457f5-6828-496a-8734-e6b9ee87977d" ChangeDateTime="05/09/2016 15:41:55">
+    <Property Name="ElementName" Value="[etljob].[sp_InitRecoveryItemRun]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_InitRecoveryItemRun]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f1a61d55-77bf-40b0-95f5-3ce09c638212" ChangeDateTime="05/09/2016 15:42:17">
+    <Property Name="ElementName" Value="[etljob].[sp_RunningPackages]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_RunningPackages]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="29c4db99-383e-4092-a050-fb00e0de0102" ChangeDateTime="05/09/2016 15:42:32">
+    <Property Name="ElementName" Value="[etljob].[sp_RunningRecoveryItems]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_RunningRecoveryItems]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4cb5c034-16f3-4f7d-bdc0-72ee7031bd0a" ChangeDateTime="05/09/2016 15:42:44">
+    <Property Name="ElementName" Value="[etljob].[sp_SetPackageParameter]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_SetPackageParameter]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0f1a119e-c21c-46ac-ab6c-3b96ef766e41" ChangeDateTime="05/09/2016 15:42:57">
+    <Property Name="ElementName" Value="[etljob].[sp_SetRecoverItemParameter]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_SetRecoverItemParameter]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="57dedc4b-882a-483b-b60e-bc31a52bff04" ChangeDateTime="05/09/2016 15:43:13">
+    <Property Name="ElementName" Value="[etljob].[sp_SetStandardJobStep]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_SetStandardJobStep]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="093feb5f-115c-4632-a3ff-3147a5dfd305" ChangeDateTime="05/09/2016 15:43:23">
+    <Property Name="ElementName" Value="[etljob].[sp_StartPackage]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_StartPackage]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9047c44f-c480-436f-9e62-069c767b1f29" ChangeDateTime="05/09/2016 15:43:34">
+    <Property Name="ElementName" Value="[etljob].[sp_UpdateJobExecution]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_UpdateJobExecution]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="21d549b7-64ca-44d2-88da-819aa9dcbb08" ChangeDateTime="05/09/2016 15:43:46">
+    <Property Name="ElementName" Value="[etljob].[sp_UpdateJobStepExecution]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_UpdateJobStepExecution]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ffc39738-a48c-4f3e-8ccf-1c3994cd2f41" ChangeDateTime="05/09/2016 15:44:01">
+    <Property Name="ElementName" Value="[etljob].[sp_UpdateRecovery]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_UpdateRecovery]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="81ce3da1-0053-4a2c-a1a9-cbae1f685909" ChangeDateTime="05/09/2016 15:44:14">
+    <Property Name="ElementName" Value="[etljob].[sp_UpdateRecoveryItemExecution]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_UpdateRecoveryItemExecution]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="54005794-6ddf-43df-b6b6-ac8cde9df1e1" ChangeDateTime="05/09/2016 15:44:27">
+    <Property Name="ElementName" Value="[etljob].[sp_UpdateRecoveryToDo]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_UpdateRecoveryToDo]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a38d485d-8c7b-4223-8d5a-366ce3e14efc" ChangeDateTime="05/09/2016 15:44:39">
+    <Property Name="ElementName" Value="[etljob].[sp_WaitingForExcludingCluster]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_WaitingForExcludingCluster]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="69f464ae-5945-4f4d-aa48-1836f455db84" ChangeDateTime="05/09/2016 16:02:16">
+    <Property Name="ElementName" Value="[etljob].[prc_GetStopedAgentJobs]" />
+    <Property Name="ElementType" Value="SqlProcedure" />
+    <Property Name="ParentElementName" Value="[etljob]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[prc_GetStoppedAgentJobs]" />
+  </Operation>
+</Operations>

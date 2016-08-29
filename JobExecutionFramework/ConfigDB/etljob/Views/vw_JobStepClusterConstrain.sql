@@ -1,0 +1,6 @@
+﻿CREATE VIEW [etljob].[vw_JobStepClusterConstrain]
+	AS SELECT [JobStepClusterConstrainID]
+	,[JobStepClusterID]
+	,[ConstrainJobStepClusterID]
+	,[IsDisabled]
+	 FROM [etljob].[JobStepClusterConstrain]

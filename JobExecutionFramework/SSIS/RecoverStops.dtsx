@@ -1,0 +1,2719 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/20/2014 2:21:10 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="NBHB240"
+  DTS:CreatorName="Christoph Seck"
+  DTS:DTSID="{16F1E7DB-2CC6-4D86-BECA-CBA4061C2C6C}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.6020.0"
+  DTS:LocaleID="1031"
+  DTS:ObjectName="RecoverStops"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="600"
+  DTS:VersionGUID="{A7D64A2E-ACE1-402E-9940-05260D102B32}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP]"
+      DTS:CreationName="SMTP"
+      DTS:DTSID="{8D486F39-4EBD-4F65-8B87-3A054AEB3083}"
+      DTS:ObjectName="SMTP">
+      <DTS:PropertyExpression
+        DTS:Name="SmtpServer">@[$Project::SMTPServer]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=mail.YourSMTPServer.de;UseWindowsAuthentication=False;EnableSsl=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{F0D5692A-336D-49B6-B061-C019DB7E21C1}"
+      DTS:ObjectName="ApplicationID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{6B8E0F6F-A2EE-4A22-A640-D6F65FF0696C}"
+      DTS:ObjectName="ClientID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{357E40FC-DCDA-4931-87D2-555CCF23C371}"
+      DTS:ObjectName="IgnoreErrors">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="11"
+      DTS:DTSID="{89DD3844-1FD2-40E1-9457-AD7500F23B36}"
+      DTS:ObjectName="IsInitialLoad">
+      <DTS:Property
+        DTS:DataType="11"
+        DTS:Name="ParameterValue">-1</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{05ECDA7C-D0C6-4B79-887C-8EC500FDCB1E}"
+      DTS:ObjectName="JobGroupID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{C88E76D2-F043-453D-9ED3-BCA5B91AFD81}"
+      DTS:ObjectName="JobID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">1</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{9AF83C40-E7C4-4203-933A-39180D0A4700}"
+      DTS:ObjectName="LayerID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:Description="0: No Mails; 1; Failure Mails; 2 All"
+      DTS:DTSID="{750A4368-0E23-4898-8DB1-46DFF67F1E0D}"
+      DTS:ObjectName="MailingLevel">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{5D793E6F-AF78-4CAC-8EE4-2D88ED403839}"
+      DTS:ObjectName="MaxGlobalWaitTime">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{C6C9372D-9D86-4F4D-B302-7F7E253DC33B}"
+      DTS:ObjectName="MaxWaitTime">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{30FEBAB5-2C8D-4A99-B210-9AE9CE5F6EC3}"
+      DTS:ObjectName="MetaGroupID">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{97E4BE6B-0D82-4236-A7AA-13D9D812ADF0}"
+      DTS:ObjectName="Restart">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">1</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{2ADFBB0A-24D9-4737-8050-7DD1FF967CB8}"
+      DTS:ObjectName="StepNo">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{6DA90B6F-84A1-4410-90C1-291FB6ABBB3E}"
+      DTS:ObjectName="StepNoEqual">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:Description="Development, QA, Production etc. Allshould be possible too"
+      DTS:DTSID="{AC85A424-6E83-4F83-9E03-79BD916F0086}"
+      DTS:ObjectName="System">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Development</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C5E26ACD-9207-4013-B4ED-D1F3F0DBC3C0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="AbortErrorHandler">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5C14F09F-917B-4FFE-83D0-02F122AAAE09}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ApplicationID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5B86A214-83AF-42E4-BA73-406EC03D4421}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ClientID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E25CAE4C-7597-471D-B8D4-019506F22540}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;EXEC msdb.dbo.prc_start_job @job_id=N'&quot; + @[User::MissedJobID]   + &quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExecAgentJob">
+      <DTS:VariableValue
+        DTS:DataType="8">EXEC msdb.dbo.prc_start_job @job_id=N'F651B03B-EA80-47E2-9844-FDD7FA2CCFA3'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{32E0ADA1-038B-4FFF-9E83-1E2937D2A825}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Failed">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{92A43464-B1AD-4A47-945D-436018A7EDD0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FailedPackages">
+      <DTS:VariableValue
+        DTS:DataType="8">''</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F505A103-8C80-4863-ACB0-99B5CD2D22E9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FromMailAddress">
+      <DTS:VariableValue
+        DTS:DataType="8">XXX@yyy.com</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AB5AE782-D02E-4C4B-9DC7-083A263FD960}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="GroupID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{649ECD65-5F4C-4AFD-BAA8-2265300A664C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="JobExecutionID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{02C87DC5-C57A-4081-BD92-264CC8FEB622}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="JobID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{79E9ECC1-A080-46B2-A80A-B8C6EB2B4B03}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="JobStepCluster">
+      <DTS:VariableValue
+        DTS:DataType="8">''</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2E9A753D-C228-4CFE-BAA7-A077E7C5E6F8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="JobStepClusterID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1981455C-F791-49D9-B09E-EA6B46428361}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="JobStepExecutionID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7EE275B1-FAFE-4ABE-A07E-ACA47E5337FA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LayerID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{46C64FDC-8DB1-43AD-AC42-7EC206A927D8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoopDummy3">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E1D29A53-9B67-4321-8951-474F51F3385D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LoopDummy4">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{23E9EC3F-C4F1-4A8B-8CB5-E89826E3B362}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::MailAddress]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MailAddress">
+      <DTS:VariableValue
+        DTS:DataType="8">chrseck@gmail.com</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ACB0C432-64F8-40CF-B464-8CDDE438ACE2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MasterPackJobStepId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D565E7FC-4BE3-41CF-BB32-D169FBEA206A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxGlobalWaitTime">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6C0754DB-0615-421D-9085-0728B121AD39}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MaxWaitTime">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FE62C01E-50A0-48DC-BED5-7B61629ECD29}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MetaGroupID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BBB9E4B5-7A8C-48D0-97EE-9F35796C9685}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MissedAgentJobs">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5EC3D32E-74CD-4290-B4A5-13812B2E579F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MissedJobID">
+      <DTS:VariableValue
+        DTS:DataType="8">F651B03B-EA80-47E2-9844-FDD7FA2CCFA3</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DEBE4296-B517-45E5-899F-B29B3AE745EA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumPackageWaiting">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{52111A79-2D20-4EB5-A7A1-1D6C5AF82C95}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Parameter">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0D4EBDDF-80FD-41C0-8F50-E86E6BBB997F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RecoveryID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C2A3118B-63A7-46EE-9715-9EE62043F9C8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RecoveryItemID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F91C350D-D5AC-480B-A1D8-15ED8305C5D6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RecoveryType">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1C2F010E-E1B3-45A0-B0B6-5EC5DBBE0067}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"> </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D28103DD-BA5D-4E83-A950-C0241B73DEED}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StartTime">
+      <DTS:VariableValue
+        DTS:DataType="7">8/5/2014 3:47:14 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0BCB9F49-FE85-47D2-9331-62943C3B22A6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StartTimeGlobal">
+      <DTS:VariableValue
+        DTS:DataType="7">8/5/2014 3:46:11 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{049CA333-71A0-4B62-A78E-1F6AA9978212}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StartTimeMissedJobs">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2015</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8CF8B3A0-B6B8-400E-8848-C6DDD99F9823}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Step">
+      <DTS:VariableValue
+        DTS:DataType="8">Archive</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{17B7C33A-8150-4D83-9883-B362A0169A25}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StepNo">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6CD8D633-FDA5-4518-9326-82C8976028FC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StepNoEqual">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A145AA0D-582D-418E-A76E-6EDDEFC841BC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StopID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1F436448-92D6-4342-92EB-0FA27A1DD4AB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Stopped">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DA4A7EA4-D1B4-44B2-B805-BDCE321033CB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="StopRecoveryID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6FEA4D68-C152-4E23-AA2D-8DFD550B8EB9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TargetSystemID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">1,7,OnError</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Finish Partials"
+      DTS:CreationName="STOCK:FORLOOP"
+      DTS:Description="Finish Partials"
+      DTS:DTSID="{E4C79662-B756-4631-A7C9-4DF11E349DA1}"
+      DTS:EvalExpression="@LoopDummy3==0"
+      DTS:ExecutableType="STOCK:FORLOOP"
+      DTS:InitExpression="@LoopDummy3=0"
+      DTS:LocaleID="-1"
+      DTS:MaxConcurrent="1"
+      DTS:ObjectName="Finish Partials">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{C9CC9A7B-4B8B-4B93-9EAD-621256CCBEAC}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="RunningPackagesGlobal">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{E9FC5F15-607E-4520-8365-E4004103ADEA}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="RunningPackagesLocal">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Finish Partials\Count Running Recoveries"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{982BF044-EEE5-4AB5-A289-B375D7418494}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Count Running Recoveries"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="Exec [etljob].[prc_RunningRecoveryItems] ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::RunningPackagesLocal" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="1"
+                SQLTask:DtsVariableName="User::RunningPackagesGlobal" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::RecoveryID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Finish Partials\Stop"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{F61133E1-6444-4C2C-A8A4-408BC780C0FD}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stop"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::LoopDummy3] = -1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Finish Partials\Update RecoveryItemStatus"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="UpdateExecutionLog"
+          DTS:DTSID="{01BBBC48-47E0-4A41-AB20-73A846C9CB68}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update RecoveryItemStatus"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="Exec [[etljob].[prc_UpdateRecoveryItemExecution] ?;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::RecoveryID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::RecoveryID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Finish Partials\UpdateRecovery Final"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="UpdateRecovery Final"
+          DTS:DTSID="{70602BC4-1F89-4B0A-BB33-682184C44E33}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="UpdateRecovery Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="Exec [[etljob].[prc_UpdateRecoveryItemExecution] ?;&#xA;Exec [etljob].[prc_UpdateRecovery] ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::RecoveryID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::RecoveryID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Finish Partials\Wait"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Wait"
+          DTS:DTSID="{FF142D9A-04AB-461D-9908-436CEB37A9D2}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Wait"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="WAITFOR DELAY '00:00:10';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Finish Partials.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{87B1AB95-2329-4AE4-950C-4262B40B27D7}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::RunningPackagesLocal] ==0"
+          DTS:From="Package\Finish Partials\Count Running Recoveries"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Finish Partials\Stop" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Finish Partials.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{C0C87887-5B95-4F0E-B688-5C4696BB2F9E}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::RunningPackagesLocal] &gt;0"
+          DTS:From="Package\Finish Partials\Count Running Recoveries"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Finish Partials\Wait" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Finish Partials.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{FFF93005-2BDB-44D9-BE93-672A071F2497}"
+          DTS:From="Package\Finish Partials\Stop"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Finish Partials\UpdateRecovery Final" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Finish Partials.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{D8FFDFA7-A826-418B-B2F1-20C475E389A1}"
+          DTS:From="Package\Finish Partials\Wait"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Finish Partials\Update RecoveryItemStatus" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LoopOverPackages"
+      DTS:CreationName="STOCK:FORLOOP"
+      DTS:Description="LoopOverPackages"
+      DTS:DTSID="{6F421056-5971-4573-879A-B9E490029CB7}"
+      DTS:EvalExpression="@LoopDummy1==0"
+      DTS:ExecutableType="STOCK:FORLOOP"
+      DTS:InitExpression="@LoopDummy1=0"
+      DTS:LocaleID="-1"
+      DTS:MaxConcurrent="1"
+      DTS:ObjectName="LoopOverPackages">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{6918E8FF-0946-498C-92D4-3B151ACDA9B3}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="Blockings">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{1D148A73-7040-4DB2-AE6B-92324CC0082A}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="DummyInfo">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{1BD1A4F0-BF7E-466C-8DB1-F0E6E7F5610E}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="ExecutionID">
+          <DTS:VariableValue
+            DTS:DataType="20">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{6BB81387-3796-46F3-9AC9-D42A417C9B16}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="JobStartID">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{D4E4A77A-82BC-497A-9004-021D642B68E8}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="LoopDummy1">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{8DF7F64D-6FED-4E8E-8AAE-B1EF993703F2}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="LoopDummy2">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\LoopOverPackages\CheckStop"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Check Stops"
+          DTS:DTSID="{3E15ACBE-1661-4936-833A-5AF2F77A924A}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CheckStop"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="Exec [etljob].[prc_GetStopID]"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="Stopped"
+                SQLTask:DtsVariableName="User::StopID" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\LoopOverPackages\ExecuteRecovery"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{E397863D-70D2-496E-BE73-B2B5E9D306CA}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ExecuteRecovery">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:DTSID="{80C84E2F-6B01-4DCF-8E77-A3FB8049A326}"
+              DTS:IncludeInDebugDump="2345"
+              DTS:Namespace="User"
+              DTS:ObjectName="ParameterName">
+              <DTS:VariableValue
+                DTS:DataType="8">''</DTS:VariableValue>
+            </DTS:Variable>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:DTSID="{F735D4EF-17B3-44CB-9914-FB7B4418B8C5}"
+              DTS:IncludeInDebugDump="2345"
+              DTS:Namespace="User"
+              DTS:ObjectName="ParameterSSISDataType">
+              <DTS:VariableValue
+                DTS:DataType="8"
+                xml:space="preserve"></DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\LoopOverPackages\ExecuteRecovery\GetParameter"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{B42A29EF-6A2D-4C49-8A3F-EB2FAAEAEE8A}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="GetParameter"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+                  SQLTask:SqlStatementSource="exec [etljob].[prc_GetRecoveryItemParameter] ?"
+                  SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="ClientID"
+                    SQLTask:DtsVariableName="User::ClientID" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="RecoveryType"
+                    SQLTask:DtsVariableName="User::RecoveryType" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="JobID"
+                    SQLTask:DtsVariableName="User::JobID" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="ApplicationID"
+                    SQLTask:DtsVariableName="User::ApplicationID" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="GroupID"
+                    SQLTask:DtsVariableName="User::GroupID" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="LayerID"
+                    SQLTask:DtsVariableName="User::LayerID" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="MetaGroupID"
+                    SQLTask:DtsVariableName="User::MetaGroupID" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="StepNo"
+                    SQLTask:DtsVariableName="User::StepNo" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="StepNoEqual"
+                    SQLTask:DtsVariableName="User::StepNoEqual" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::RecoveryItemID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\LoopOverPackages\ExecuteRecovery\InitPackage"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{1366DF94-CFC8-4ECE-AF7E-90A3642EEBF1}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="InitPackage"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+                  SQLTask:SqlStatementSource="exec [etljob].[prc_InitRecoveryItemRun] ?,?,?"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="0"
+                    SQLTask:DtsVariableName="User::ExecutionID" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="$Project::LoggingLevel"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::MasterPackJobStepId"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::RecoveryItemID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\LoopOverPackages\ExecuteRecovery\SetParameterValues"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="SetParameterValues"
+              DTS:DTSID="{2AF3450E-6D07-4401-8034-1CFD8BEADA9A}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="SetParameterValues"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+                  SQLTask:SqlStatementSource="exec [etljob].[prc_SetRecoverItemParameter] ?,?,?,?,?,?,?,?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::ExecutionID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::RecoveryType"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="2"
+                    SQLTask:DtsVariableName="User::JobID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="3"
+                    SQLTask:DtsVariableName="User::ApplicationID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="130"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="4"
+                    SQLTask:DtsVariableName="User::GroupID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="5"
+                    SQLTask:DtsVariableName="User::LayerID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="6"
+                    SQLTask:DtsVariableName="User::MetaGroupID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="7"
+                    SQLTask:DtsVariableName="User::StepNo"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="8"
+                    SQLTask:DtsVariableName="User::StepNoEqual"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="9"
+                    SQLTask:DtsVariableName="User::ClientID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="10"
+                    SQLTask:DtsVariableName="User::RecoveryItemID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="11"
+                    SQLTask:DtsVariableName="User::StopRecoveryID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\LoopOverPackages\ExecuteRecovery\Start Package"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Start Package"
+              DTS:DTSID="{8F4CAB3D-4D86-4593-8FC7-8892B61A5BDB}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Start Package"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+                  SQLTask:SqlStatementSource="exec [etljob].prc_StartPackage 0,?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::ExecutionID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="1"
+                    SQLTask:DtsVariableName="User::RecoveryItemID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\LoopOverPackages\ExecuteRecovery.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{4CF778F7-D3BE-408F-BA7F-CF84A5C5BA8D}"
+              DTS:From="Package\LoopOverPackages\ExecuteRecovery\InitPackage"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\LoopOverPackages\ExecuteRecovery\SetParameterValues" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\LoopOverPackages\ExecuteRecovery.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{18028F0B-5811-4075-A678-29CAA25F486B}"
+              DTS:From="Package\LoopOverPackages\ExecuteRecovery\GetParameter"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\LoopOverPackages\ExecuteRecovery\InitPackage" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\LoopOverPackages\ExecuteRecovery.PrecedenceConstraints[Constraint 2]"
+              DTS:CreationName=""
+              DTS:DTSID="{0BC61B03-49F2-4E57-A016-5F6C83C7FDAC}"
+              DTS:From="Package\LoopOverPackages\ExecuteRecovery\SetParameterValues"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 2"
+              DTS:To="Package\LoopOverPackages\ExecuteRecovery\Start Package" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\LoopOverPackages\FreeSlotWait"
+          DTS:CreationName="STOCK:FORLOOP"
+          DTS:Description="FreeSlotWait"
+          DTS:DTSID="{B449A227-FD24-4F65-9495-7436193F10A8}"
+          DTS:EvalExpression="@LoopDummy2==0"
+          DTS:ExecutableType="STOCK:FORLOOP"
+          DTS:InitExpression="@LoopDummy2=0"
+          DTS:LocaleID="-1"
+          DTS:MaxConcurrent="1"
+          DTS:ObjectName="FreeSlotWait">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:DTSID="{13C8DA23-EF3E-452F-96EF-C4EEAA0611D3}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="User"
+              DTS:ObjectName="RunningRecoveryItemsGlobal">
+              <DTS:VariableValue
+                DTS:DataType="3">0</DTS:VariableValue>
+            </DTS:Variable>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:DTSID="{A5269B95-F9FE-4DC8-9695-2922BD1010DA}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="User"
+              DTS:ObjectName="RunningRecoveryItemsLocal">
+              <DTS:VariableValue
+                DTS:DataType="3">0</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\LoopOverPackages\FreeSlotWait\Count Running Recoveries"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{C4BC4C15-4092-44AA-A92A-739CDC2789CB}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Count Running Recoveries"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+                  SQLTask:SqlStatementSource="Exec [etljob].[prc_RunningRecoveryItems] ?"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="0"
+                    SQLTask:DtsVariableName="User::RunningRecoveryItemsLocal" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="1"
+                    SQLTask:DtsVariableName="User::RunningRecoveryItemsGlobal" />
+                  <SQLTask:ParameterBinding
+                    SQLTask:ParameterName="0"
+                    SQLTask:DtsVariableName="User::RecoveryID"
+                    SQLTask:ParameterDirection="Input"
+                    SQLTask:DataType="3"
+                    SQLTask:ParameterSize="-1" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\LoopOverPackages\FreeSlotWait\StopWaiting"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Expression Task"
+              DTS:DTSID="{C3F890BE-DF79-43A0-891E-2636A998A27C}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="StopWaiting"
+              DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <ExpressionTask
+                  Expression="@[User::LoopDummy2] = -1" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\LoopOverPackages\FreeSlotWait\WaitForSlot"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="WaitForBlockingPackages"
+              DTS:DTSID="{3CB6DE53-574B-460A-B72B-E085052D5624}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="WaitForSlot"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+                  SQLTask:SqlStatementSource="WAITFOR DELAY '00:00:05';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\LoopOverPackages\FreeSlotWait.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{0DA371EB-0833-4217-A4EC-5C53BCE68E6E}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[$Project::MaxParallelizationGlobal] &gt; @[User::RunningRecoveryItemsGlobal]  &amp;&amp;  @[$Project::MaxParallelizationLocal] &gt; @[User::RunningRecoveryItemsLocal]"
+              DTS:From="Package\LoopOverPackages\FreeSlotWait\Count Running Recoveries"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\LoopOverPackages\FreeSlotWait\StopWaiting" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\LoopOverPackages\FreeSlotWait.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{C56FCA62-69DD-4DD6-84C3-F8E89B3A0F2C}"
+              DTS:EvalOp="3"
+              DTS:Expression="@[$Project::MaxParallelizationGlobal] &lt;= @[User::RunningRecoveryItemsGlobal]  ||    @[$Project::MaxParallelizationLocal] &lt;= @[User::RunningRecoveryItemsLocal]"
+              DTS:From="Package\LoopOverPackages\FreeSlotWait\Count Running Recoveries"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\LoopOverPackages\FreeSlotWait\WaitForSlot" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\LoopOverPackages\GetNextRecoveryItem"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="GetNextRecoveryItem"
+          DTS:DTSID="{235D4ED2-B6C6-4FFC-9A5D-21713F10DFC6}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GetNextRecoveryItem"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="exec [etljob].prc_GetNextRecoveryItem ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::RecoveryItemID" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="1"
+                SQLTask:DtsVariableName="User::StopRecoveryID" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::RecoveryID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\LoopOverPackages\Stop"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{99B21CED-877A-4327-AA84-761710FDA068}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Stop"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; � 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::LoopDummy1] = -1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\LoopOverPackages\Update RecoveryItemStatus"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Update RecoveryItemStatus"
+          DTS:DTSID="{EE569B4B-66A3-41D1-A7A6-00A42774236E}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update RecoveryItemStatus"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="Exec [[etljob].[prc_UpdateRecoveryItemExecution] ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::RecoveryID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\LoopOverPackages.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{6EB40DE4-3E79-47BB-B898-1993C70D6A33}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::RecoveryItemID] &lt;= 0"
+          DTS:From="Package\LoopOverPackages\GetNextRecoveryItem"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\LoopOverPackages\Stop" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\LoopOverPackages.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{644D6798-7EC4-451A-9A0E-FF907CE301E3}"
+          DTS:From="Package\LoopOverPackages\ExecuteRecovery"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\LoopOverPackages\Update RecoveryItemStatus" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\LoopOverPackages.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{BCAA8073-4918-4C46-B468-21309B6B6D6D}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::RecoveryItemID] &gt; 0"
+          DTS:From="Package\LoopOverPackages\GetNextRecoveryItem"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\LoopOverPackages\ExecuteRecovery" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\LoopOverPackages.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{8CE28CC4-C5C7-4F0C-94BE-FE80A4C8223B}"
+          DTS:From="Package\LoopOverPackages\FreeSlotWait"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\LoopOverPackages\CheckStop" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\LoopOverPackages.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{9D38AE09-6943-4C69-B195-D59F3A374811}"
+          DTS:From="Package\LoopOverPackages\Stop"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\LoopOverPackages\Update RecoveryItemStatus" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\LoopOverPackages.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{12FAD243-8A3E-44B8-B646-CFE5C57B36A5}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::StopID] &lt;= 0"
+          DTS:From="Package\LoopOverPackages\CheckStop"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\LoopOverPackages\GetNextRecoveryItem" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\LoopOverPackages.PrecedenceConstraints[Constraint 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{61DD6EBF-CDB1-4662-A151-398D401E3004}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[User::StopID] &gt; 0"
+          DTS:From="Package\LoopOverPackages\CheckStop"
+          DTS:ObjectName="Constraint 8"
+          DTS:To="Package\LoopOverPackages\Stop" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B8F016E0-5459-4B76-9F38-C4BDF8CC6256}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Start\Check If Stop"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Check If Stop"
+          DTS:DTSID="{F7597FFE-4930-4735-A6E8-82668370ABAF}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Check If Stop"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="exec [etljob].[prc_GetStopID]"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::StopID" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Start\FillRecoveryItemForRestart"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Fill RecoveryItem Restart"
+          DTS:DTSID="{4F04D8F2-581B-45CF-8CAA-5E09343DDC0B}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="FillRecoveryItemForRestart"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="exec [etljob].[prc_FillRecoveryItem4Restart] ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::JobExecutionID" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::RecoveryID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Start\Get Server Name"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8BB44F8C-576E-4790-B35A-5DDF90F208DF}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get Server Name"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="SELECT @@SERVERNAME AS ServerName"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="ServerName"
+                SQLTask:DtsVariableName="User::ServerName" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Start\GetMasterJobStep"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="GetMasterPackageJobStepID"
+          DTS:DTSID="{f9f91f48-1cf8-439b-9910-9fe5ff566a35}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GetMasterJobStep"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="SELECT Min(Job.JobStepID) as MasterJobStepID&#xA;FROM etljob.JobStep AS Job&#xA;INNER JOIN etljob.Package AS Pack&#xA;&#x9;ON Job.PackageID = Pack.PackageID&#xA;WHERE (Pack.PackageName = N'Master.dtsx')&#xA;&#x9;AND (Job.ApplicationID = 0)&#xA;&#x9;AND (Job.JobID = 0)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="MasterJobStepID"
+                SQLTask:DtsVariableName="User::MasterPackJobStepId" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Start\GetTargetSystemID"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Check Jobs Dependencies"
+          DTS:DTSID="{885B2256-0A1B-44DC-883D-A17EA1CB21D3}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GetTargetSystemID"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="Exec [etljob].prc_GetTargetSystemID ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="TargetSystemID"
+                SQLTask:DtsVariableName="User::TargetSystemID" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="$Package::System"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Start\InitRecovery"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Fill RecoveryItem Restart"
+          DTS:DTSID="{845492ac-1f03-4c2e-afa9-f339f1ee2d91}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="InitRecovery"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="exec [etljob].[prc_InitRecovery]"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::RecoveryID" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Start\Set Global Starttime"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{84D47594-A9F1-48D2-8B27-DAD1632A9CF7}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Set Global Starttime"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::StartTimeGlobal]  =  GETDATE()" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Start.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{BA058A43-9F26-4EF8-9F94-39426EE65F4F}"
+          DTS:From="Package\Start\InitRecovery"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Start\FillRecoveryItemForRestart" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Start.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{1998BC66-2DD6-4D9C-ABFA-BF9B6FFBF1A6}"
+          DTS:From="Package\Start\FillRecoveryItemForRestart"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Start\Set Global Starttime" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Start.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{235B8E8C-9BFF-4E11-899E-C666EBE04E2F}"
+          DTS:From="Package\Start\Set Global Starttime"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Start\Get Server Name" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Start.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{9A6D27EB-54D0-4A38-8B07-34AA1C9D59F9}"
+          DTS:From="Package\Start\Get Server Name"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Start\GetTargetSystemID" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Start.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{01C1B502-1D15-4CFC-A59A-BA1190BA8C74}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::StopID] == 0"
+          DTS:From="Package\Start\Check If Stop"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Start\InitRecovery" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Start.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{56DD9E3C-6171-477C-8A3F-33C6E54F8308}"
+          DTS:From="Package\Start\GetTargetSystemID"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Start\GetMasterJobStep" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start Missed Agent Jobs"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Start Missed Agent Jobs"
+      DTS:DTSID="{1CF45205-56D7-45C0-AD41-635E760E1BC9}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start Missed Agent Jobs">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Start Missed Agent Jobs\ForEachMissedJob"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="ForEachMissedJob"
+          DTS:DTSID="{521CC799-7D41-4A8A-B6DE-DD9ADB1262F8}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ForEachMissedJob">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+            DTS:DTSID="{1868FC50-94B3-4037-BF22-B8B7EE6FC3DF}"
+            DTS:ObjectName="{1868FC50-94B3-4037-BF22-B8B7EE6FC3DF}">
+            <DTS:ObjectData>
+              <FEEADO
+                EnumType="EnumerateRowsInFirstTable"
+                VarName="User::MissedAgentJobs" />
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Start Missed Agent Jobs\ForEachMissedJob\Exec Agent Job"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{32D4B0D2-5BC4-4869-9FFB-F1CD61DB549A}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Exec Agent Job"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{42A90497-945F-456E-BFF1-EE27EB7BA4E9}"
+                  SQLTask:SqlStmtSourceType="Variable"
+                  SQLTask:SqlStatementSource="User::ExecAgentJob" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{B498C6FA-0893-43C0-9C47-F0BE6E4ED63E}"
+              DTS:ObjectName="{B498C6FA-0893-43C0-9C47-F0BE6E4ED63E}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::MissedJobID" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Start Missed Agent Jobs\GetMissedAgentJobs"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="GetMissedAgentJobs"
+          DTS:DTSID="{7302AE39-DC29-46EB-A693-E0C01490C12C}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="GetMissedAgentJobs"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DD099255-2E9A-4F84-A795-F405046985F4}"
+              SQLTask:SqlStatementSource="exec etljob.prc_GetStoppedAgenbtJobs 'Framework';&#xA;--select 'Test'"
+              SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::MissedAgentJobs" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Start Missed Agent Jobs.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{E5452D63-1711-4B89-AAC6-6EA05CEBD801}"
+          DTS:From="Package\Start Missed Agent Jobs\GetMissedAgentJobs"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Start Missed Agent Jobs\ForEachMissedJob" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{28745AB4-9C8B-4A1D-BD48-1CE8FCF84D26}"
+      DTS:EvalOp="3"
+      DTS:Expression="@[User::StopID] == 0"
+      DTS:From="Package\Start"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\LoopOverPackages" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{26EC59AD-1ED9-4759-8ED3-E438216C30C3}"
+      DTS:From="Package\Finish Partials"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Start Missed Agent Jobs" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{317DC57F-8431-4267-8D8A-6E3F949F711F}"
+      DTS:Expression="@[User::StopID] == 0"
+      DTS:From="Package\LoopOverPackages"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Finish Partials" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPreExecute]"
+      DTS:CreationName="OnPreExecute"
+      DTS:DTSID="{E1585806-6C8E-4BED-A972-913EFC9DA283}"
+      DTS:EventID="0"
+      DTS:EventName="OnPreExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{CD7D166D-571F-4598-BEAB-05A54C7AACAE}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{4400943F-4EA7-489D-A20C-A302897AB5D4}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="sParentExecutionID">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:LoggingOptions
+        DTS:LoggingMode="2" />
+      <DTS:Executables />
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Dieser CDATA-Abschnitt enthält die Layoutinformationen des Pakets, z.B. Informationen wie X-/Y-Koordinaten, Breite und Höhe.-->
+<!--Wenn Sie diesen Abschnitt manuell ändern und Ihnen ein Fehler unterläuft, können Sie ihn löschen. -->
+<!--Das Paket kann zwar weiterhin normal geladen werden, aber frühere Layoutinformationen gehen verloren, und die Elemente auf der Entwurfsoberfläche werden vom Designer automatisch neu angeordnet.-->
+<Objects
+  Version="sql11">
+  <!--Jeder darunter liegende Knoten enthält Eigenschaften, die sich nicht auf das Laufzeitverhalten auswirken.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\Finish Partials\Count Running Recoveries"
+          TopLeft="151.1,5.49999999999994" />
+        <NodeLayout
+          Size="100.8,41.6"
+          Id="Package\Finish Partials\Stop"
+          TopLeft="72.3,73.1" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\Finish Partials\Update RecoveryItemStatus"
+          TopLeft="277.45,140.7" />
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Finish Partials\UpdateRecovery Final"
+          TopLeft="20.3,140.7" />
+        <NodeLayout
+          Size="100.8,41.6"
+          Id="Package\Finish Partials\Wait"
+          TopLeft="331.95,73.1" />
+        <EdgeLayout
+          Id="Package\Finish Partials.PrecedenceConstraints[Constraint]"
+          TopLeft="219.766666666667,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-96.9666666666666,25.6000000000001"
+              Start="0,0"
+              End="-96.9666666666666,18.1000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,6.36070726915524" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,6.36070726915524"
+                    Point2="0,10.3607072691552"
+                    Point3="-4,10.3607072691552" />
+                  <mssgle:LineSegment
+                    End="-92.9666666666666,10.3607072691552" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-92.9666666666666,10.3607072691552"
+                    Point2="-96.9666666666666,10.3607072691552"
+                    Point3="-96.9666666666666,14.3607072691552" />
+                  <mssgle:LineSegment
+                    End="-96.9666666666666,18.1000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-56.4833333333333,15.3607072691552,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Finish Partials.PrecedenceConstraints[Constraint 1]"
+          TopLeft="284.433333333333,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.0166666666668,25.6000000000001"
+              Start="0,0"
+              End="98.0166666666668,18.1000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,6.36070726915524" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,6.36070726915524"
+                    Point2="0,10.3607072691552"
+                    Point3="4,10.3607072691552" />
+                  <mssgle:LineSegment
+                    End="94.0166666666668,10.3607072691552" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94.0166666666668,10.3607072691552"
+                    Point2="98.0166666666668,10.3607072691552"
+                    Point3="98.0166666666668,14.3607072691552" />
+                  <mssgle:LineSegment
+                    End="98.0166666666668,18.1000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="41.0083333333334,15.3607072691552,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Finish Partials.PrecedenceConstraints[Constraint 2]"
+          TopLeft="122.8,115.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.6"
+              Start="0,0"
+              End="0,18.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Finish Partials.PrecedenceConstraints[Constraint 3]"
+          TopLeft="382.45,115.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.6"
+              Start="0,0"
+              End="0,18.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="516,209.6"
+          Size="516,252.8"
+          Id="Package\Finish Partials"
+          TopLeft="1048.08414502987,402" />
+        <NodeLayout
+          Size="128,41.6"
+          Id="Package\LoopOverPackages\CheckStop"
+          TopLeft="175.822449254156,218.79328005645" />
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\LoopOverPackages\ExecuteRecovery\GetParameter"
+          TopLeft="39.2872485546085,16.1058858213127" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\LoopOverPackages\ExecuteRecovery\InitPackage"
+          TopLeft="44.7872485546085,83.1495841847354" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\LoopOverPackages\ExecuteRecovery\SetParameterValues"
+          TopLeft="24.7872485546085,150.193282548158" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\LoopOverPackages\ExecuteRecovery\Start Package"
+          TopLeft="40.2872485546085,217.236980911581" />
+        <EdgeLayout
+          Id="Package\LoopOverPackages\ExecuteRecovery.PrecedenceConstraints[Constraint]"
+          TopLeft="111.287248554608,125.149584184735">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.0436983634228"
+              Start="0,0"
+              End="0,17.5436983634228">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5436983634228" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LoopOverPackages\ExecuteRecovery.PrecedenceConstraints[Constraint 1]"
+          TopLeft="111.287248554608,58.1058858213127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.0436983634228"
+              Start="0,0"
+              End="0,17.5436983634228">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5436983634228" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LoopOverPackages\ExecuteRecovery.PrecedenceConstraints[Constraint 2]"
+          TopLeft="111.287248554608,192.193282548158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.0436983634228"
+              Start="0,0"
+              End="0,17.5436983634228">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5436983634228" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="230.4,294.4"
+          Size="230.4,336.8"
+          Id="Package\LoopOverPackages\ExecuteRecovery"
+          TopLeft="313.009186618947,344.447060972762" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\LoopOverPackages\FreeSlotWait\Count Running Recoveries"
+          TopLeft="84.9,5.49999999999994" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\LoopOverPackages\FreeSlotWait\StopWaiting"
+          TopLeft="13.9489796335428,79.2596634610715" />
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\LoopOverPackages\FreeSlotWait\WaitForSlot"
+          TopLeft="230.140816701883,79.2596634610715" />
+        <EdgeLayout
+          Id="Package\LoopOverPackages\FreeSlotWait.PrecedenceConstraints[Constraint]"
+          TopLeft="153.566666666667,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-71.6176870331239,31.7596634610715"
+              Start="0,0"
+              End="-71.6176870331239,24.2596634610715">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.85361625340026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.85361625340026"
+                    Point2="0,12.8536162534003"
+                    Point3="-4,12.8536162534003" />
+                  <mssgle:LineSegment
+                    End="-67.6176870331239,12.8536162534003" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-67.6176870331239,12.8536162534003"
+                    Point2="-71.6176870331239,12.8536162534003"
+                    Point3="-71.6176870331239,16.8536162534003" />
+                  <mssgle:LineSegment
+                    End="-71.6176870331239,24.2596634610715" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-43.8088435165619,17.8536162534003,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LoopOverPackages\FreeSlotWait.PrecedenceConstraints[Constraint 1]"
+          TopLeft="218.233333333333,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78.4074833685498,31.7596634610715"
+              Start="0,0"
+              End="78.4074833685498,24.2596634610715">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.85361625340026" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.85361625340026"
+                    Point2="0,12.8536162534003"
+                    Point3="4,12.8536162534003" />
+                  <mssgle:LineSegment
+                    End="74.4074833685498,12.8536162534003" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.4074833685498,12.8536162534003"
+                    Point2="78.4074833685498,12.8536162534003"
+                    Point3="78.4074833685498,16.8536162534003" />
+                  <mssgle:LineSegment
+                    End="78.4074833685498,24.2596634610715" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="31.2037416842749,17.8536162534003,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="377.6,145.6"
+          Size="377.6,188.8"
+          Id="Package\LoopOverPackages\FreeSlotWait"
+          TopLeft="51.3,5.50000000000003" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\LoopOverPackages\GetNextRecoveryItem"
+          TopLeft="337.009186618947,272.676469987652" />
+        <NodeLayout
+          Size="100.8,41.6"
+          Id="Package\LoopOverPackages\Stop"
+          TopLeft="25.822449254156,272.676469987652" />
+        <NodeLayout
+          Size="209.6,41.6"
+          Id="Package\LoopOverPackages\Update RecoveryItemStatus"
+          TopLeft="9.82244925415603,732.068071464683" />
+        <EdgeLayout
+          Id="Package\LoopOverPackages.PrecedenceConstraints[Constraint]"
+          TopLeft="337.009186618947,299.343136654318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-210.186737364791,0"
+              Start="0,0"
+              End="-202.686737364791,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-202.686737364791,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-109.343368682396,5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LoopOverPackages.PrecedenceConstraints[Constraint 1]"
+          TopLeft="428.009186618947,681.447060972762">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-279.520070698124,50.621010491921"
+              Start="0,0"
+              End="-279.520070698124,43.121010491921">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.1429457560588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.1429457560588"
+                    Point2="0,30.1429457560588"
+                    Point3="-4,30.1429457560588" />
+                  <mssgle:LineSegment
+                    End="-275.520070698124,30.1429457560588" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-275.520070698124,30.1429457560588"
+                    Point2="-279.520070698124,30.1429457560588"
+                    Point3="-279.520070698124,34.1429457560588" />
+                  <mssgle:LineSegment
+                    End="-279.520070698124,43.121010491921" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LoopOverPackages.PrecedenceConstraints[Constraint 2]"
+          TopLeft="429.009186618947,314.676469987652">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.7705909851106"
+              Start="0,0"
+              End="0,22.2705909851106">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.2705909851106" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,3.13529549255529,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LoopOverPackages.PrecedenceConstraints[Constraint 3]"
+          TopLeft="240.061224627078,194.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.29328005645"
+              Start="0,0"
+              End="0,16.79328005645">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.79328005645" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LoopOverPackages.PrecedenceConstraints[Constraint 6]"
+          TopLeft="78.7391159208227,314.676469987652">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,417.391601477032"
+              Start="0,0"
+              End="0,409.891601477032">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,409.891601477032" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LoopOverPackages.PrecedenceConstraints[Constraint 7]"
+          TopLeft="303.822449254156,239.79328005645">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33.186737364791,48.2165232645348"
+              Start="0,0"
+              End="25.686737364791,48.2165232645348">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="15.1813252658884,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.1813252658884,0"
+                    Point2="19.1813252658884,0"
+                    Point3="19.1813252658884,4" />
+                  <mssgle:LineSegment
+                    End="19.1813252658884,44.2165232645348" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.1813252658884,44.2165232645348"
+                    Point2="19.1813252658884,48.2165232645348"
+                    Point3="23.1813252658884,48.2165232645348" />
+                  <mssgle:LineSegment
+                    End="25.686737364791,48.2165232645348" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.1813252658884,-22,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\LoopOverPackages.PrecedenceConstraints[Constraint 8]"
+          TopLeft="175.822449254156,239.79328005645">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-49,48.2165232645348"
+              Start="0,0"
+              End="-41.5,48.2165232645348">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-24.3211009174312,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.3211009174312,0"
+                    Point2="-28.3211009174312,0"
+                    Point3="-28.3211009174312,4" />
+                  <mssgle:LineSegment
+                    End="-28.3211009174312,44.2165232645348" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.3211009174312,44.2165232645348"
+                    Point2="-28.3211009174312,48.2165232645348"
+                    Point3="-32.3211009174312,48.2165232645348" />
+                  <mssgle:LineSegment
+                    End="-41.5,48.2165232645348" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-36.3211009174312,-22,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="567.2,780"
+          Size="567.2,823.2"
+          Id="Package\LoopOverPackages"
+          TopLeft="412.07302406791,117" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Start\Check If Stop"
+          TopLeft="60.3221595090214,5.49999999999994" />
+        <NodeLayout
+          Size="206.4,41.6"
+          Id="Package\Start\FillRecoveryItemForRestart"
+          TopLeft="29.3221595090214,145.474511584224" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Start\Get Server Name"
+          TopLeft="52.3221595090214,285.449023168447" />
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Start\GetMasterJobStep"
+          TopLeft="49.3221595090214,425.423534752671" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Start\GetTargetSystemID"
+          TopLeft="46.8221595090214,355.436278960559" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Start\InitRecovery"
+          TopLeft="63.3221595090214,75.4872557921118" />
+        <NodeLayout
+          Size="172.8,41.6"
+          Id="Package\Start\Set Global Starttime"
+          TopLeft="45.8221595090214,215.461767376336" />
+        <EdgeLayout
+          Id="Package\Start.PrecedenceConstraints[Constraint]"
+          TopLeft="132.322159509021,117.487255792112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.9872557921118"
+              Start="0,0"
+              End="0,20.4872557921118">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4872557921118" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Start.PrecedenceConstraints[Constraint 1]"
+          TopLeft="132.322159509021,187.474511584224">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.9872557921119"
+              Start="0,0"
+              End="0,20.4872557921119">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4872557921119" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Start.PrecedenceConstraints[Constraint 2]"
+          TopLeft="132.322159509021,257.461767376336">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.9872557921119"
+              Start="0,0"
+              End="0,20.4872557921119">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4872557921119" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Start.PrecedenceConstraints[Constraint 3]"
+          TopLeft="132.322159509021,327.449023168447">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.9872557921119"
+              Start="0,0"
+              End="0,20.4872557921119">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4872557921119" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Start.PrecedenceConstraints[Constraint 4]"
+          TopLeft="131.822159509021,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.9872557921119"
+              Start="0,0"
+              End="0,20.4872557921119">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4872557921119" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,2.24362789605593,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Start.PrecedenceConstraints[Constraint 5]"
+          TopLeft="132.322159509021,397.436278960559">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.9872557921118"
+              Start="0,0"
+              End="0,20.4872557921118">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4872557921118" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="257.6,502.4"
+          Size="257.6,544.8"
+          Id="Package\Start"
+          TopLeft="85.06190310595,256" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Start Missed Agent Jobs\ForEachMissedJob\Exec Agent Job"
+          TopLeft="30.4857399376069,23.0117739033947" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="217.6,91.2"
+          Size="217.6,134.4"
+          Id="Package\Start Missed Agent Jobs\ForEachMissedJob"
+          TopLeft="44.407147072448,97.364711982569" />
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\Start Missed Agent Jobs\GetMissedAgentJobs"
+          TopLeft="64.407147072448,30.3411808033716" />
+        <EdgeLayout
+          Id="Package\Start Missed Agent Jobs.PrecedenceConstraints[Constraint]"
+          TopLeft="153.407147072448,72.3411808033716">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.0235311791974"
+              Start="0,0"
+              End="0,17.5235311791974">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5235311791974" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="302.4,267.2"
+          Size="302.4,310.4"
+          Id="Package\Start Missed Agent Jobs"
+          TopLeft="1633.09526599183,373.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="343.06190310595,528.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69.0111209619602,0"
+              Start="0,0"
+              End="61.5111209619602,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.5111209619602,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="22.7555604809801,5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="1564.08414502987,528.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69.0111209619602,0"
+              Start="0,0"
+              End="61.5111209619602,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.5111209619602,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="979.07302406791,528.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="69.0111209619602,0"
+              Start="0,0"
+              End="61.5111209619602,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.5111209619602,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

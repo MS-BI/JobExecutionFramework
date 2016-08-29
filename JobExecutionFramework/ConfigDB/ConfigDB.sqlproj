@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>ConfigDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{8f8747c4-ad01-47f1-a6e4-7c40a60b007e}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>ETL_Metadata</RootNamespace>
+    <AssemblyName>ETL_Metadata</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <AnsiNulls>True</AnsiNulls>
+    <QuotedIdentifier>False</QuotedIdentifier>
+    <Containment>None</Containment>
+    <IsNestedTriggersOn>True</IsNestedTriggersOn>
+    <IsTransformNoiseWordsOn>False</IsTransformNoiseWordsOn>
+    <TwoDigitYearCutoff>2049</TwoDigitYearCutoff>
+    <NonTransactedFileStreamAccess>OFF</NonTransactedFileStreamAccess>
+    <TargetRecoveryTimePeriod>0</TargetRecoveryTimePeriod>
+    <TargetRecoveryTimeUnit>SECONDS</TargetRecoveryTimeUnit>
+    <IsChangeTrackingOn>False</IsChangeTrackingOn>
+    <IsChangeTrackingAutoCleanupOn>True</IsChangeTrackingAutoCleanupOn>
+    <ChangeTrackingRetentionPeriod>2</ChangeTrackingRetentionPeriod>
+    <ChangeTrackingRetentionUnit>Days</ChangeTrackingRetentionUnit>
+    <IsEncryptionOn>False</IsEncryptionOn>
+    <IsBrokerPriorityHonored>False</IsBrokerPriorityHonored>
+    <Trustworthy>False</Trustworthy>
+    <AutoUpdateStatisticsAsynchronously>False</AutoUpdateStatisticsAsynchronously>
+    <PageVerify>CHECKSUM</PageVerify>
+    <ServiceBrokerOption>DisableBroker</ServiceBrokerOption>
+    <DateCorrelationOptimizationOn>False</DateCorrelationOptimizationOn>
+    <Parameterization>SIMPLE</Parameterization>
+    <AllowSnapshotIsolation>False</AllowSnapshotIsolation>
+    <ReadCommittedSnapshot>False</ReadCommittedSnapshot>
+    <VardecimalStorageFormatOn>True</VardecimalStorageFormatOn>
+    <SupplementalLoggingOn>False</SupplementalLoggingOn>
+    <CompatibilityMode>110</CompatibilityMode>
+    <AnsiNullDefault>False</AnsiNullDefault>
+    <AnsiPadding>False</AnsiPadding>
+    <AnsiWarnings>False</AnsiWarnings>
+    <ArithAbort>False</ArithAbort>
+    <ConcatNullYieldsNull>False</ConcatNullYieldsNull>
+    <NumericRoundAbort>False</NumericRoundAbort>
+    <RecursiveTriggersEnabled>False</RecursiveTriggersEnabled>
+    <DatabaseChaining>False</DatabaseChaining>
+    <DatabaseState>ONLINE</DatabaseState>
+    <CloseCursorOnCommitEnabled>False</CloseCursorOnCommitEnabled>
+    <DefaultCursor>GLOBAL</DefaultCursor>
+    <AutoClose>False</AutoClose>
+    <AutoCreateStatistics>True</AutoCreateStatistics>
+    <AutoShrink>False</AutoShrink>
+    <AutoUpdateStatistics>True</AutoUpdateStatistics>
+    <TornPageDetection>False</TornPageDetection>
+    <DatabaseAccess>MULTI_USER</DatabaseAccess>
+    <Recovery>SIMPLE</Recovery>
+    <EnableFullTextSearch>True</EnableFullTextSearch>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <CreateProjectFromDatabaseCompleted>True</CreateProjectFromDatabaseCompleted>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <DefaultSchema>etljob</DefaultSchema>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="etljob" />
+    <Folder Include="etljob\Tables" />
+    <Folder Include="etljob\Views" />
+    <Folder Include="Security\" />
+    <Folder Include="etljob\Stored Procedures" />
+    <Folder Include="etljob\Functions" />
+    <Folder Include="Scripts" />
+    <Folder Include="ssis" />
+    <Folder Include="ssis\Synonyms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="etljob\Tables\JobStep.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\JobStepConstrain.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\Group.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\Package.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_GetNextPackage.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_ExecutePackage.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_RunningPackages.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\Client.sql" />
+    <Build Include="etljob\Tables\JobStepException.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="etljob\Tables\Application.sql" />
+    <Build Include="etljob\Tables\Layer.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="etljob\Tables\Exclusion.sql" />
+    <Build Include="etljob\Tables\MetaGroup.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\JobStepExecution.sql" />
+    <Build Include="etljob\Views\vw_Package.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_MetaGroup.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_Layer.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_JobStepExecution.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_JobStepException.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_JobStepConstrain.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_JobStep.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_Group.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_Exclusion.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_Client.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_Application.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_SSISProjects.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_SSISFolders.sql" />
+    <Build Include="etljob\Tables\Job.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_Job.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\JobExecution.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_InitJobExecution.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_UpdateJobStepExecution.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_SSISexecutions.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_PackagesSSISDB.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_JobExecution.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Functions\fn_BlockedJobSteps.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="Security\etljob.sql" />
+    <Build Include="etljob\Views\vw_MissingJobStep.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_UpdateJobExecution.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
+    <Build Include="etljob\Tables\SSISStatus.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\JobStepCluster.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_SSISEventMessageContext.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_SSISErrorMessages.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_LoadVariables.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_LoadMessages.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_LoadErrorDetail.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_LoadError.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_JobStepCluster.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_JobsFailed.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\SSISEventMessageContext.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Functions\fn_StatusJobSteps.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_GetJobStepCluster.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_FailedPackages.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Functions\fn_GetDependingJobSteps.sql" />
+    <Build Include="etljob\Stored Procedures\prc_GetDependingJobSteps.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_CheckJobFailure.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_CheckJobDependencies.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\JobStepClusterConstrain.sql" />
+    <Build Include="etljob\Views\vw_JobStepClusterConstrain.sql" />
+    <Build Include="etljob\Tables\Parameter.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="etljob\Views\vw_Parameter.sql" />
+    <Build Include="etljob\Tables\DataTypeLookUp.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_DataTypeLookUp.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\System.sql" />
+    <Build Include="etljob\Views\vw_ParameterValueJobStep.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_ParameterValuePackage.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_ParameterValueProject.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_ParameterValueApplication.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="Security\ssis.sql" />
+    <Build Include="etljob\Views\vw_System.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Functions\fn_ParameterValuesForJobStep.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_GetTargetSystemID.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_StartPackage.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_InitPackage.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_SetPackageParameter.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\Folder.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\Project.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_Folder.sql" />
+    <Build Include="etljob\Views\vw_Project.sql" />
+    <Build Include="etljob\Tables\ParameterValue.sql" />
+    <Build Include="etljob\Views\vw_ParameterValue.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_GetSSISDBFolders.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_GetSSISDBProjects.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_CleanUpProjects.sql" />
+    <Build Include="etljob\Stored Procedures\prc_CleanUpFolders.sql" />
+    <Build Include="ssis\Synonyms\packages.sql" />
+    <Build Include="etljob\Stored Procedures\prc_GetSSISDBPackages.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\Folder2Job.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_Folder2Job.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_SetStandardJobStep.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_GetSSISDBParameter.sql" />
+    <Build Include="etljob\Views\vw_ParameterForJobStep.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\ParamterValueLevel.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_ParameterValueLevel.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_ParameterValueFolder.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_GetSSISDBDefaultParameterValues.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_SSISStatus.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_ParameterValuesForJobStep.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="ssis\Synonyms\vw_Executions.sql" />
+    <Build Include="ssis\Synonyms\folders.sql" />
+    <Build Include="ssis\Synonyms\object_parameters.sql" />
+    <Build Include="ssis\Synonyms\projects.sql" />
+    <None Include="Scripts\FillSSISStatus.sql" />
+    <Build Include="etljob\Tables\JobStepClusterExclusion.sql" />
+    <Build Include="etljob\Views\vw_JobStepClusterExclusion.sql" />
+    <Build Include="etljob\Tables\Stop.sql" />
+    <Build Include="etljob\Views\vw_Stop.sql" />
+    <Build Include="etljob\Stored Procedures\prc_CheckExcludingClusters.sql" />
+    <Build Include="etljob\Stored Procedures\prc_CheckStops.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\RecoveryItem.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="etljob\Views\vw_RecoveryItem.sql" />
+    <Build Include="etljob\Stored Procedures\prc_UpdateRecoveryToDo.sql" />
+    <Build Include="etljob\Stored Procedures\prc_FillRecoveryItem4Restart.sql" />
+    <None Include="Scripts\FillClient.sql" />
+    <Build Include="etljob\Stored Procedures\prc_GetStopID.sql" />
+    <Build Include="etljob\Stored Procedures\prc_WaitingForExcludingCluster.sql" />
+    <Build Include="etljob\Tables\Recovery.sql" />
+    <Build Include="etljob\Views\vw_Recovery.sql" />
+    <Build Include="etljob\Stored Procedures\prc_InitRecovery.sql" />
+    <Build Include="etljob\Stored Procedures\prc_GetNextRecoveryItem.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <None Include="Scripts\FillApplication.sql" />
+    <None Include="Scripts\FillJob.sql" />
+    <Build Include="etljob\Stored Procedures\prc_GetRecoveryItemParameter.sql" />
+    <Build Include="etljob\Stored Procedures\prc_SetRecoverItemParameter.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_InitRecoveryItemRun.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_RunningRecoveryItems.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_GetMissedJobID.sql" />
+    <Build Include="etljob\Stored Procedures\prc_UpdateRecoveryItemExecution.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_UpdateRecovery.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Stored Procedures\prc_GetStoppedAgentJobs.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Tables\ReservedParameter.sql" />
+    <Build Include="etljob\Views\vw_ReservedParameter.sql" />
+    <None Include="Scripts\FillReservedParameter.sql" />
+    <Build Include="etljob\Tables\JobExecutionEndStatus.sql" />
+    <Build Include="etljob\Views\vw_JobExecutionEndStatus.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <None Include="Scripts\FillJobExecutionEndStatus.sql" />
+    <Build Include="etljob\Stored Procedures\prc_GetReportExecutionOverview.sql" />
+    <Build Include="etljob\Stored Procedures\prc_GetReportParaJobExecutionEndStatus.sql" />
+    <Build Include="etljob\Stored Procedures\prc_GetReportParaJobStepExecutionStatus.sql" />
+    <Build Include="etljob\Functions\fn_StringToTable.sql" />
+    <Build Include="etljob\Views\vw_LoadErrorDetailResult.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <Build Include="etljob\Views\vw_JobExecutionResult.sql">
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
+    <None Include="Scripts\FillParameterValueLevel.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SSISDB\SSISDB.sqlproj">
+      <Name>SSISDB</Name>
+      <Project>{bb65cb84-612c-44e0-87a2-240411d866bc}</Project>
+      <Private>False</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>SSISDB</DatabaseSqlCmdVariable>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="msdb">
+      <DefaultValue>msdb</DefaultValue>
+      <Value>$(SqlCmdVar__2)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="SSISDB">
+      <DefaultValue>SSISDB</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="ETL_Metadata.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\FillDataTypeLookUp.sql" />
+    <None Include="Scripts\FillSystem.sql" />
+    <None Include="DBConf_Local.publish.xml" />
+    <None Include="ConfigDB.publish.xml" />
+    <None Include="Local.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\110\SqlSchemas\msdb.dacpac">
+      <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\110\SqlSchemas\msdb.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>msdb</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+  </ItemGroup>
+</Project>

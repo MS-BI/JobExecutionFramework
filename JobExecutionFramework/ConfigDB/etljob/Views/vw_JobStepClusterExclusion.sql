@@ -1,0 +1,6 @@
+﻿CREATE VIEW [etljob].[vw_JobStepClusterExclusion]
+	AS SELECT [JobStepClusterExclusionID]
+	,[JobStepClusterID]
+	,[ExclusionJobStepClusterID]
+	,[IsDisabled]
+	 FROM [etljob].[JobStepClusterExclusion]
