@@ -1,4 +1,4 @@
-# JobExceutionFramework
+# JobExecutionFramework
 **The Job Excecution Framework for SSIS**
 
 The main task of the Execution Framework is the management of ETL Processes implemented with SQL Server Integrations Services.
